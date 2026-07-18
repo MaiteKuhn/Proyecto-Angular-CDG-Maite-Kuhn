@@ -1,19 +1,16 @@
 <nav> 
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">{{title}}</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/']">{{title}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Historia</a>
+            <a class="nav-link" [routerLink]="['/historia']">Historia</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Futbol</a>
+            <a class="nav-link" [routerLink]="['/compra'] ">Indumentaria</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled">Pelota Paleta</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled">Indumentaria</a>
+            <a class="nav-link" [routerLink]="['/eventos']">Eventos</a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled">Asociate</a>
@@ -21,13 +18,12 @@
     </ul>
 </nav>
 <div class="container">
-    <div class="row">
-        <div class="col-8">
-            <app-lista-indumentaria></app-lista-indumentaria>
-        </div>
-        <div class="col-4">
-            <app-carrito-compras></app-carrito-compras>
-        </div>
-    </div>
-<footer> {{title}} - by MK - 2026</footer>
+    <router-outlet></router-outlet>
+</div>
+<footer class="bg-dark text-white-50 text-center py-3 mt-auto">
+  <div class="container">
+    <small>© {{ title }} — Maite Kuhn 2026</small>
+  </div>
+</footer>
+
 

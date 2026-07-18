@@ -4,5 +4,6 @@ export interface Indumentaria {
     valor: number;
     imagen: string;  
     stock: number;
-    oferta: boolean;  
+    oferta: boolean;
+    cantidad: number;  
 }

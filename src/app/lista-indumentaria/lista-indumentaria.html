@@ -1,3 +1,4 @@
+<h3>Lista de indumentaria</h3>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -5,6 +6,7 @@
             <th>Nombre</th>
             <th>Talle</th>
             <th>Valor</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +18,10 @@
             <td>{{indum.valor | currency:'ARS':'symbol':'1.2-2'}}</td>
             @if (indum.stock > 0) {
                 <td>
-                    <button class="btn btn-comprar">Comprar</button>
+                    <button class="btn btn-comprar" (click)="downQuantity(indum)">-</button>
+                    <input type="number" [(ngModel)]="indum.cantidad">
+                    <button class="btn btn-comprar" (click)="upQuantity(indum)">+</button>
+
                 </td>
             } @else {
                 <td>

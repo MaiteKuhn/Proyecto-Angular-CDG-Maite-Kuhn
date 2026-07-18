@@ -16,6 +16,7 @@ export class ListaIndumentaria implements OnInit {
       imagen: 'assets/img/titular.jpg',
       stock: 10,
       oferta: false,
+      cantidad:0,
     },
 
     { nombre: 'Camiseta reserva 2026', 
@@ -24,6 +25,7 @@ export class ListaIndumentaria implements OnInit {
       imagen: 'assets/img/reserva.jpg',
       stock: 4,
       oferta: false,
+      cantidad:0,
     },
 
     { nombre: 'Rompevientos', 
@@ -32,6 +34,7 @@ export class ListaIndumentaria implements OnInit {
       imagen: 'assets/img/rompeviento.jpg', 
       stock: 0,
       oferta: false, 
+      cantidad:0,
     },
     
     { nombre: 'Conjunto entrenamiento', 
@@ -40,6 +43,7 @@ export class ListaIndumentaria implements OnInit {
         imagen: 'assets/img/conjuntoEntrenamiento.jpg', 
         stock: 2, 
         oferta: true,
+        cantidad:0,
     },
     
     { nombre: 'Conjunto viajes', 
@@ -48,12 +52,24 @@ export class ListaIndumentaria implements OnInit {
         imagen: 'assets/img/conjuntoViaje.jpg', 
         stock: 2, 
         oferta: false,
+        cantidad:0,
     }
   ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  upQuantity(indum: Indumentaria): void{
+    if (indum.cantidad < indum.stock) {
+      indum.cantidad++;
+    }
+  }
+  downQuantity(indum: Indumentaria): void{
+    if (indum.cantidad > 0) {
+      indum.cantidad--;
+    } 
   }
 
 }
