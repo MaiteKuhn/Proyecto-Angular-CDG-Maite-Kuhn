@@ -61,15 +61,4 @@ export class ListaIndumentaria implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(indum: Indumentaria): void{
-    if (indum.cantidad < indum.stock) {
-      indum.cantidad++;
-    }
-  }
-  downQuantity(indum: Indumentaria): void{
-    if (indum.cantidad > 0) {
-      indum.cantidad--;
-    } 
-  }
-
 }

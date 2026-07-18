@@ -16,18 +16,12 @@
             <td>{{indum.nombre}}</td>
             <td>{{indum.talle}}</td>
             <td>{{indum.valor | currency:'ARS':'symbol':'1.2-2'}}</td>
-            @if (indum.stock > 0) {
-                <td>
-                    <button class="btn btn-comprar" (click)="downQuantity(indum)">-</button>
-                    <input type="number" [(ngModel)]="indum.cantidad">
-                    <button class="btn btn-comprar" (click)="upQuantity(indum)">+</button>
-
-                </td>
-            } @else {
-                <td>
-                    <button class="btn btn-agotado" disabled>Agotado</button>
-                </td>
-            }
+            <td> @if (indum.stock > 0) {
+                    <app-input-numeros [indum]="indum"></app-input-numeros>
+                } @else {
+                    <button class="btn btn-agotado" disabled> Agotado </button>
+                }
+            </td>
         </tr>
         } @empty {
             <tr>

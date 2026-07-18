@@ -11,6 +11,7 @@ import { ClubHistoria } from './club-historia/club-historia';
 import { ClubEventos } from './club-eventos/club-eventos';
 import { ClubAsociate } from './club-asociate/club-asociate';
 import { Home } from './home/home';
+import { InputNumeros } from './input-numeros/input-numeros';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { Home } from './home/home';
     ClubEventos,
     ClubAsociate,
     Home,
+    InputNumeros,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
