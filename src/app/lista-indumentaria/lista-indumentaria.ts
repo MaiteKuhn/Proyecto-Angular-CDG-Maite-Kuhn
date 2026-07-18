@@ -31,9 +31,10 @@ export class ListaIndumentaria implements OnInit {
       valor: 50000, 
       imagen: 'assets/img/rompeviento.jpg', 
       stock: 0,
-      oferta: false, },
+      oferta: false, 
+    },
     
-      { nombre: 'Conjunto entrenamiento', 
+    { nombre: 'Conjunto entrenamiento', 
         talle: 'M-XL', 
         valor: 40000, 
         imagen: 'assets/img/conjuntoEntrenamiento.jpg', 
@@ -41,13 +42,13 @@ export class ListaIndumentaria implements OnInit {
         oferta: true,
     },
     
-      { nombre: 'Conjunto viajes', 
+    { nombre: 'Conjunto viajes', 
         talle: '12-14-16-M-2XL', 
         valor: 60000, 
         imagen: 'assets/img/conjuntoViaje.jpg', 
         stock: 2, 
         oferta: false,
-      }
+    }
   ]
 
   constructor() { }
