@@ -1,3 +1,17 @@
 .oferta {
     background-color: #bcf6c3;
 }
+.btn-comprar {
+    background-color: #6de66d; // verde claro
+    border-color: #90ee90;
+    color: white;
+}
+.btn-comprar:hover {
+    background-color: #1f6f1f;
+    border-color: #0f340f;
+}
+.btn-agotado {
+    background-color: #024102;
+    border-color: #006400;
+    color: white;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Indumentaria } from '../lista-indumentaria/Indumentaria';
 
 @Component({
@@ -9,19 +9,28 @@ import { Indumentaria } from '../lista-indumentaria/Indumentaria';
 })
 export class InputNumeros implements OnInit { 
   constructor() { }
-  @Input() 
-  indum! : Indumentaria; 
-  ngOnInit(): void {
+  @Input()
+  cantidad!: number; 
+
+  @Input()
+  max!: number; 
+
+  @Output()
+  cantidadChange: EventEmitter<number> = new EventEmitter<number>();
+
+ngOnInit(): void {
   }
 
-  upQuantity(indum: Indumentaria): void{
-    if (indum.cantidad < indum.stock) {
-      indum.cantidad++;
-    }
+  upQuantity(): void{
+    if (this.cantidad < this.max) {
+      this.cantidad++;
+      this.cantidadChange.emit(this.cantidad);
+    } 
   }
-  downQuantity(indum: Indumentaria): void{
-    if (indum.cantidad > 0) {
-      indum.cantidad--;
+  downQuantity(): void{
+    if (this.cantidad > 0) {
+      this.cantidad--;
+      this.cantidadChange.emit(this.cantidad);
     } 
   }
 }

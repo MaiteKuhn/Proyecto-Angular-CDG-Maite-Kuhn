@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Indumentaria } from './Indumentaria';
+import { CarritoIndumService } from '../carrito-indum-service';
 
 @Component({
   selector: 'app-lista-indumentaria',
@@ -56,9 +57,18 @@ export class ListaIndumentaria implements OnInit {
     }
   ]
 
-  constructor() { }
+  mensaje: string = '';
+
+  constructor(private carrito: CarritoIndumService) {
+  }
 
   ngOnInit(): void {
   }
 
+  agregarAlCarrito(indum: Indumentaria): void {
+
+  this.carrito.agregarAlCarrito(indum);
+  indum.stock -= indum.cantidad;
+  indum.cantidad = 0;
+}
 }

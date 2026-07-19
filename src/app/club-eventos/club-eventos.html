@@ -1,1 +1,14 @@
-<p>club-eventos works!</p>
+<h1>Eventos 2026</h1>
+<div class="row g-4">
+    @for (evento of eventos; track evento.nombre) {
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow">
+                <img [src]="evento.imagen" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>{{evento.nombre}}</h5>
+                    <p>{{evento.fecha}}</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
