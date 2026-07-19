@@ -1,0 +1,64 @@
+.eventos-header {
+
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    color: white;
+
+    p {
+        color: rgba(255,255,255,.8);
+    }
+
+}
+
+.eventos-card {
+
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.eventos-card .card-header {
+
+    background: #1b5e20;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 20px;
+
+}
+
+.evento-item {
+
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .25s;
+
+}
+
+.evento-item:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.evento-item img {
+
+    height: 220px;
+    object-fit: cover;
+
+}
+
+.evento-item h5 {
+
+    color: #1b5e20;
+    font-weight: bold;
+
+}
+
+.fecha-badge {
+
+    background: #e8f5e9;
+    color: #1b5e20;
+    padding: 8px 14px;
+    font-size: .9rem;
+
+}

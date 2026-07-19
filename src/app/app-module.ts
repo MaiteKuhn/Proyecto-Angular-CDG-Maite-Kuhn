@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing-module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { App } from './app';
 import { ListaIndumentaria } from './lista-indumentaria/lista-indumentaria';
 import { CarritoCompras } from './carrito-compras/carrito-compras';
@@ -23,7 +24,7 @@ import { InputNumeros } from './input-numeros/input-numeros';
     ClubAsociate,
     InputNumeros,
   ],
-  imports: [BrowserModule, AppRoutingModule,  CommonModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule,  CommonModule, ReactiveFormsModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

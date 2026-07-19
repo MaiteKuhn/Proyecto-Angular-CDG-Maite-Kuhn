@@ -1,67 +1,95 @@
-<h3 class="fw-semibold">🛒 Carrito de compras</h3>
+<div class="card shadow border-0 carrito-card sticky-top" style="top: 1rem;">
 
-<div class="card shadow-sm sticky-top" style="top: 1rem">
+  <div class="card-header d-flex justify-content-between align-items-center">
 
-  <div class="card-header d-flex justify-content-between">
-    <span>Productos</span>
-    <span class="badge text-bg-secondary">
-       {{ (listaDeCompras$ | async)?.length }}
+    <span>🛒 Carrito de compras</span>
+
+    <span class="badge bg-white text-success fw-bold">
+      {{ (listaDeCompras$ | async)?.length }}
     </span>
+
   </div>
 
   <div class="card-body">
 
-    @if((listaDeCompras$ | async)?.length! > 0) {
+    @if ((listaDeCompras$ | async)?.length! > 0) {
 
-  <ul class="list-group">
+      <ul class="list-group">
 
-  @for(item of listaDeCompras$ | async; track item.nombre) {
+        @for (item of (listaDeCompras$ | async)!; track item.nombre) {
 
-  <li class="list-group-item">
+          <li class="list-group-item">
 
-    <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
 
-      <img 
-        [src]="item.imagen" 
-        [alt]="item.nombre"
-        width="60"
-        class="rounded me-3">
+              <img
+                [src]="item.imagen"
+                [alt]="item.nombre"
+                width="60"
+                class="rounded me-3">
 
-      <div class="flex-grow-1">
+              <div class="flex-grow-1">
 
-        <h6 class="mb-1">
-          {{ item.nombre }}
-        </h6>
+                <h6 class="mb-1">
+                  {{ item.nombre }}
+                </h6>
 
-        <small class="text-muted">
-          Cantidad: {{ item.cantidad }}
+                <small class="text-muted">
+                  Cantidad: {{ item.cantidad }}
+                </small>
+
+              </div>
+
+              <div class="text-end">
+
+                <strong>
+                  {{ item.valor * item.cantidad | currency:'ARS':'symbol':'1.0-0' }}
+                </strong>
+
+              </div>
+
+            </div>
+
+          </li>
+
+        }
+
+      </ul>
+
+    } @else {
+
+      <div class="text-center py-4">
+
+        <h5 class="text-muted">
+          Tu carrito está vacío
+        </h5>
+
+        <small class="text-secondary">
+          Agregá productos de la tienda para comenzar tu compra.
         </small>
 
       </div>
 
-      <div class="text-end">
-        <strong>
-          {{ item.valor * item.cantidad | currency:'ARS':'symbol':'1.0-0' }}
-        </strong>
-      </div>
+    }
+
+  </div>
+
+  <div class="card-footer">
+
+    <div class="d-flex justify-content-between mb-3">
+
+      <strong>Total:</strong>
+
+      <strong>
+        {{ totalCompra | currency:'ARS':'symbol':'1.0-0' }}
+      </strong>
 
     </div>
 
-  </li>
-}
-</ul>
-<div class="card-footer">
-  <div class="d-flex justify-content-between mb-3">
-    <strong>Total:</strong>
-    <strong>
-      {{ totalCompra | currency:'ARS':'symbol':'1.0-0' }}
-    </strong>
+    <button class="btn btn-comprar w-100">
+      Comprar
+    </button>
+
   </div>
 
-  <button class="btn btn-comprar w-100">
-Comprar </button>
-
 </div>
-    } @else {
-      <p class="text-muted">Tu carrito está vacío.</p>
-    }

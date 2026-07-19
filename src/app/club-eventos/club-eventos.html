@@ -1,14 +1,53 @@
-<h1>Eventos 2026</h1>
-<div class="row g-4">
-    @for (evento of eventos; track evento.nombre) {
-        <div class="col-md-6 col-lg-3">
-            <div class="card h-100 shadow">
-                <img [src]="evento.imagen" class="card-img-top">
-                <div class="card-body text-center">
-                    <h5>{{evento.nombre}}</h5>
-                    <p>{{evento.fecha}}</p>
-                </div>
+<div class="container my-5">
+
+  <!-- Encabezado -->
+  <div class="eventos-header text-center mb-5 p-4 rounded-3 shadow-sm">
+
+    <h1 class="display-6 fw-bold text-uppercase m-0">
+      Eventos 2026
+    </h1>
+
+  </div>
+
+  <div class="card shadow-sm border-0 eventos-card">
+
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span class="badge bg-white text-success fw-bold">  Conocé nuestras actividades </span>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row g-4">
+
+        @for (evento of eventos; track evento.nombre) {
+
+        <div class="col-md-6 col-lg-4">
+
+          <div class="card evento-item h-100 shadow-sm border-0">
+
+            <img
+              [src]="evento.imagen"
+              [alt]="evento.nombre"
+              class="card-img-top">
+
+            <div class="card-body text-center">
+
+              <h5>{{evento.nombre}}</h5>
+
+              <span class="badge fecha-badge"> 📅 {{evento.fecha}}</span>
+
             </div>
+
+          </div>
+
         </div>
-    }
+
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

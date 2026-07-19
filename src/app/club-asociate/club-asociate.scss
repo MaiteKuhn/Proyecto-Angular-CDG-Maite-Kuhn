@@ -1,25 +1,60 @@
-.btn-socio {
-    background-color: #31bc31;
-    border-color: #31bc31;
-    color: white;
-    font-weight: 600;
+.encabezado-socios{
+
+    background: linear-gradient(135deg,#1b5e20,#43a047);
+    color:white;
+
 }
 
-.btn-socio:hover {
-    background-color: #1f6f1f;
-    border-color: #1f6f1f;
-    color: white;
+.encabezado-socios p{
+
+    color:rgba(255,255,255,.8);
+
 }
 
-.card {
-    border-radius: 15px;
+.formulario-card{
+
+    border-radius:12px;
+    overflow:hidden;
+
 }
 
-h1 {
-    color: #1f6f1f;
+.formulario-card .card-header{
+
+    background:#1b5e20;
+    color:white;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:16px;
+
 }
 
-h2 {
-    color: #31bc31;
-    font-weight: bold;
+.form-control{
+
+    border-radius:10px;
+    padding:10px;
+
+}
+
+.form-control:focus{
+
+    border-color:#43a047;
+    box-shadow:0 0 0 .2rem rgba(67,160,71,.2);
+
+}
+
+.btn-socio{
+
+    background:#1b5e20;
+    color:white;
+    font-weight:bold;
+    border:none;
+    border-radius:25px;
+    padding:12px;
+
+}
+
+.btn-socio:hover{
+
+    background:#43a047;
+
 }

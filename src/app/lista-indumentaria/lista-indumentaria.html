@@ -32,7 +32,6 @@
             <th>Producto</th>
             <th>Talles</th>
             <th>Precio</th>
-            <th>Stock</th>
             <th class="text-center pe-4">Compra</th>
 
         </tr>
@@ -42,137 +41,39 @@
 
 
     <tbody>
+        @for (indum of indumentaria; track indum.nombre) {
+        <tr  [ngClass]="{'table-success fw-bold': indum.oferta}"  style="border-left:4px solid #43a047;">
 
+            <td class="ps-4">
+                <img  [src]="indum.imagen"  [alt]="indum.nombre" class="rounded border shadow-sm" style="width:70px;height:70px;object-fit:contain;">
+            </td>
 
-    @for (indum of indumentaria; track indum.nombre) {
+            <td>
+                <span class="fw-bold d-block fs-5 nombre-producto"> {{indum.nombre}} </span>
+            </td>
 
+            <td>
+                <span class="badge talle"> {{indum.talle}} </span>
+            </td>
 
-    <tr 
-    [ngClass]="{'table-success fw-bold': indum.oferta}"
-    style="border-left:4px solid #43a047;">
+            <td>
+                <span class="fw-bold fs-5"> {{indum.valor | currency:'ARS':'symbol':'1.0-0'}} </span>
+            </td>
 
-
-
-    <td class="ps-4">
-
-    <img 
-    [src]="indum.imagen"
-    [alt]="indum.nombre"
-    class="rounded border shadow-sm"
-    style="width:70px;height:70px;object-fit:contain;">
-
-    </td>
-
-
-
-    <td>
-
-    <span class="fw-bold d-block fs-5 nombre-producto">
-
-    {{indum.nombre}}
-
-    </span>
-
-    </td>
-
-
-
-    <td>
-
-    <span class="badge talle">
-
-    {{indum.talle}}
-
-    </span>
-
-    </td>
-
-
-
-    <td>
-
-    <span class="fw-bold fs-5">
-
-    {{indum.valor | currency:'ARS':'symbol':'1.0-0'}}
-
-    </span>
-
-    </td>
-
-
-
-    <td>
-
-
-    @if(indum.stock > 0){
-
-    <span class="badge stock">
-    Disponible: {{indum.stock}}
-    </span>
-
-    } @else {
-
-        <span class="badge bg-danger rounded-pill px-3 py-2">
-        Agotado
-        </span>
-
+            <td>
+                @if(indum.stock > 0){
+                    <app-input-numeros [(cantidad)]="indum.cantidad" [max]="indum.stock"> </app-input-numeros>
+                    <button class="btn btn-comprar mt-2" (click)="agregarAlCarrito(indum)"> Agregar </button>
+                } @else {
+                    <span class="badge bg-danger rounded-pill px-3 py-2"> Agotado </span>
+                }
+            </td>
+    </tr>
+    } @empty {
+        <tr>
+            <td colspan="6" class="text-center py-5 text-muted fs-5"> No hay indumentaria disponible.</td>
+        </tr>
     }
-
-
-    </td>
-
-
-
-
-<td class="text-center pe-4">
-
-
-@if(indum.stock > 0){
-
-
-<app-input-numeros 
-[(cantidad)]="indum.cantidad"
-[max]="indum.stock">
-</app-input-numeros>
-
-
-<button 
-class="btn btn-comprar mt-2"
-(click)="agregarAlCarrito(indum)">
-
-Agregar
-
-</button>
-
-
-}
-
-
-</td>
-
-
-
-</tr>
-
-
-}
-
-@empty {
-
-
-<tr>
-
-<td colspan="6" class="text-center py-5 text-muted fs-5">
-
-No hay indumentaria disponible.
-
-</td>
-
-</tr>
-
-
-}
-
 
 </tbody>
 

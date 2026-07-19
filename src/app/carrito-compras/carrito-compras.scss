@@ -1,5 +1,55 @@
-.btn-sm{
-    background-color: #1f6f1f;
-    border-color: #0f340f;
-    color: white;
+.carrito-card{
+
+    border-radius:12px;
+    overflow:hidden;
+
+}
+
+.carrito-card .card-header{
+
+    background:#1b5e20;
+    color:white;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:16px;
+
+}
+
+.carrito-card .card-footer{
+
+    background:white;
+
+}
+
+.list-group-item{
+
+    border:none;
+    border-bottom:1px solid #ececec;
+    padding:15px;
+
+}
+
+.list-group-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.btn-comprar{
+
+    background:#1b5e20;
+    color:white;
+    border:none;
+    border-radius:25px;
+    padding:10px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.btn-comprar:hover{
+
+    background:#43a047;
+    color:white;
+
 }

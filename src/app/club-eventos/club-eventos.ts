@@ -25,7 +25,12 @@ export class ClubEventos {
       fecha: '06/06/2026',
       imagen: 'assets/img/aniversario.jpg'
     },
-  {
+    {
+      nombre: 'Baby Fútbol Invierno',
+      fecha: '25/07/2026',
+      imagen: 'assets/img/baby_futbol.jpg'
+    },
+    {
       nombre: 'Juego de salón',
       fecha: '16/08/2026',
       imagen: 'assets/img/juego_de_salon.jpg'
