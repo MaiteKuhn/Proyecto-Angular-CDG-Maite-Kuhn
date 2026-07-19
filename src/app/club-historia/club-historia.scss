@@ -1,0 +1,48 @@
+.historia-header {
+  background: linear-gradient(135deg, #1b5e20, #43a047);
+  color: white;
+
+  p {
+    color: rgba(255,255,255,0.75);
+  }
+}
+
+
+.historia-card {
+
+  border-radius: 15px;
+  overflow: hidden;
+
+
+  .card-header {
+    background-color: #1b5e20;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px;
+  }
+
+
+  h3 {
+    color: #1b5e20;
+    font-weight: bold;
+  }
+
+
+  p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+
+}
+
+
+.list-group-item {
+  padding: 15px;
+}
+
+
+strong {
+  color: #1b5e20;
+}

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Home } from './home/home';
 import {CompraIndumentaria} from './compra-indumentaria/compra-indumentaria';
 import { ClubHistoria } from './club-historia/club-historia';
 import { ClubAsociate } from './club-asociate/club-asociate';
@@ -11,12 +10,8 @@ import { ClubEventos } from './club-eventos/club-eventos';
 const routes: Routes = [
   {
     path: '', 
-    redirectTo: 'home', 
+    redirectTo: 'historia', 
     pathMatch: 'full'
-  },
-  {
-    path: 'home', 
-    component: Home
   },
   {
     path: 'compra', 

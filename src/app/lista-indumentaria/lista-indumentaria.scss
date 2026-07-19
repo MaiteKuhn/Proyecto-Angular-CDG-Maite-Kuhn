@@ -1,17 +1,46 @@
-.oferta {
-    background-color: #bcf6c3;
+.nombre-producto {
+    color:#1b5e20;
 }
+
+
+.talle {
+
+    background:#e8f5e9;
+    color:#1b5e20;
+    padding:8px 15px;
+
+}
+
+
+.stock {
+
+    background:#43a047;
+    padding:8px 15px;
+
+}
+
+
+
 .btn-comprar {
-    background-color: #6de66d; // verde claro
-    border-color: #90ee90;
-    color: white;
+
+    background:#1b5e20;
+    color:white;
+    border-radius:20px;
+    padding:8px 20px;
+    font-weight:bold;
+
+
+    &:hover {
+
+        background:#43a047;
+
+    }
+
 }
-.btn-comprar:hover {
-    background-color: #1f6f1f;
-    border-color: #0f340f;
-}
-.btn-agotado {
-    background-color: #024102;
-    border-color: #006400;
-    color: white;
+
+
+.table-success {
+
+    --bs-table-bg:#f1f8e9;
+
 }
